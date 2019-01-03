@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class GameCode extends Application {
-    private ArrayList<Integer> sequence = new ArrayList<Integer>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -17,13 +16,6 @@ public class GameCode extends Application {
         primaryStage.setTitle("GUI Unit Lab 3");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-
-        addToSequence();
-    }
-
-    private void addToSequence() {
-        int randInt = (int) (Math.random() * 4);
-        sequence.add(randInt);
     }
 
     public static void main(String[] args) {
