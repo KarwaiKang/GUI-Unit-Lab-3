@@ -10,10 +10,10 @@
 <GridPane alignment="CENTER" hgap="5.0" stylesheets="/sample/style.css" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <Label fx:id="label" text="Level 1:" GridPane.halignment="CENTER" GridPane.valignment="CENTER">Not clicked</Label>
    <Label fx:id="label1" layoutX="15.0" layoutY="17.0" text="Simon says" GridPane.columnIndex="1" />
-   <Button fx:id="red" onAction="#click" prefHeight="100.0" prefWidth="100.0" text="Red" GridPane.rowIndex="1" />
-   <Button fx:id="green" onAction="#click" prefHeight="100.0" prefWidth="100.0" text="Green" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-    <Button fx:id="blue" onAction="#click" prefHeight="100.0" prefWidth="100.0" text="Blue" GridPane.rowIndex="2" />
-   <Button fx:id="yellow" onAction="#click" prefHeight="100.0" prefWidth="100.0" text="Yellow" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   <Button fx:id="red" onAction="#redClick" prefHeight="100.0" prefWidth="100.0" text="Red" GridPane.rowIndex="1" />
+   <Button fx:id="green" onAction="#greenClick" prefHeight="100.0" prefWidth="100.0" text="Green" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Button fx:id="blue" onAction="#blueClick" prefHeight="100.0" prefWidth="100.0" text="Blue" GridPane.rowIndex="2" />
+   <Button fx:id="yellow" onAction="#yellowClick" prefHeight="100.0" prefWidth="100.0" text="Yellow" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />

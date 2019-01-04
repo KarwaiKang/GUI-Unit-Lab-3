@@ -1,12 +1,12 @@
 package sample;
 
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Controller {
     private ArrayList<Integer> sequence = new ArrayList<Integer>();
@@ -19,7 +19,9 @@ public class Controller {
 
     @FXML
     public void initialize() {
-        addToSequence();
+        for (int i = 0; i < 10; i++) {
+            addToSequence();
+        }
         doSequence();
     }
 
@@ -29,25 +31,48 @@ public class Controller {
     }
 
     private void doSequence() {
-        for (int i : sequence) {
-            switch (i) {
-                case 0:
-                    red.setStyle("-fx-background-color: red; ");
-                    break;
-                case 1:
-                    green.setStyle("-fx-background-color: green; ");
-                    break;
-                case 2:
-                    blue.setStyle("-fx-background-color: blue; ");
-                    break;
-                case 3:
-                    yellow.setStyle("-fx-background-color: yellow; ");
-                    break;
+        new AnimationTimer() {
+            Long time = System.currentTimeMillis();
+            int i = 0;
+            @Override
+            public void handle(long now) {
+                if (System.currentTimeMillis() - time > 1000) {
+                    switch (sequence.get(i)) {
+                        case 0:
+                            red.fire();
+                            break;
+                        case 1:
+                            green.fire();
+                            break;
+                        case 2:
+                            blue.fire();
+                            break;
+                        case 3:
+                            yellow.fire();
+                            break;
+                    }
+                    if (i == sequence.size()) {
+                        this.stop();
+                    }
+                    time = System.currentTimeMillis();
+                }
             }
-        }
+        }.start();
     }
 
-    public void click(ActionEvent e) {
+    public void redClick(ActionEvent event) {
+        red.setText("Clicked!");
+    }
+
+    public void blueClick(ActionEvent e) {
         blue.setText("Clicked!");
+    }
+
+    public void greenClick(ActionEvent event) {
+        green.setText("Clicked!");
+    }
+
+    public void yellowClick(ActionEvent e) {
+        yellow.setText("Clicked!");
     }
 }
