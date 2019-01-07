@@ -1,15 +1,15 @@
-#blue:armed {
-    -fx-background-color: blue;
+#blue {
+    -fx-background-color: #005377;
 }
 
-#red:armed {
-    -fx-background-color: red;
+#red {
+    -fx-background-color: #7F0000;
 }
 
-#green:armed {
-    -fx-background-color: green;
+#green {
+    -fx-background-color: #425E00;
 }
 
-#yellow:armed {
-    -fx-background-color: yellow;
+#yellow {
+    -fx-background-color: #7F5B00;
 }
